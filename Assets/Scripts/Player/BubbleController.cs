@@ -1,58 +1,61 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class BubbleController : MonoBehaviour
+namespace Realyteam.Player
 {
-    [SerializeField]
-    private Rigidbody bubbleRigidbody;
-    [SerializeField]
-    private float pushForce = 5f;
-    [SerializeField]
-    private float edgeThreshold = 0.1f;
-    [SerializeField]
-    private float gravityForce = 9.8f;
-
-    private float bubbleRadius;
-    private Transform[] handTransforms;
-    private Dictionary<Transform, bool> handInContact;
-
-    void Start()
+    public class BubbleController : MonoBehaviour
     {
-        bubbleRadius = GetComponent<SphereCollider>().radius * transform.localScale.x;
+        [SerializeField]
+        private Rigidbody bubbleRigidbody;
+        [SerializeField]
+        private float pushForce = 5f;
+        [SerializeField]
+        private float edgeThreshold = 0.1f;
+        [SerializeField]
+        private float gravityForce = 9.8f;
 
-        GameObject[] hands = GameObject.FindGameObjectsWithTag("Hand");
-        handTransforms = new Transform[hands.Length];
-        handInContact = new Dictionary<Transform, bool>();
+        private float bubbleRadius;
+        private Transform[] handTransforms;
+        private Dictionary<Transform, bool> handInContact;
 
-        for (int i = 0; i < hands.Length; i++)
+        private void Start()
         {
-            handTransforms[i] = hands[i].transform;
-            handInContact[handTransforms[i]] = false;
-        }
-    }
+            bubbleRadius = GetComponent<SphereCollider>().radius * transform.localScale.x;
 
-    void FixedUpdate()
-    {
-        Vector3 downwardForce = Vector3.up * gravityForce;
-        bubbleRigidbody.AddForce(downwardForce, ForceMode.Acceleration);
+            GameObject[] hands = GameObject.FindGameObjectsWithTag("Hand");
+            handTransforms = new Transform[hands.Length];
+            handInContact = new Dictionary<Transform, bool>();
 
-        foreach (Transform hand in handTransforms)
-        {
-            Vector3 handPosition = hand.position;
-            float distanceFromCenter = Vector3.Distance(handPosition, transform.position);
-
-            if (distanceFromCenter >= bubbleRadius - edgeThreshold)
+            for (int i = 0; i < hands.Length; i++)
             {
-                if (!handInContact[hand])
-                {
-                    Vector3 pushDirection = (handPosition - transform.position).normalized;
-                    bubbleRigidbody.AddForce(pushDirection * pushForce, ForceMode.Impulse);
-                    handInContact[hand] = true;
-                }
+                handTransforms[i] = hands[i].transform;
+                handInContact[handTransforms[i]] = false;
             }
-            else
+        }
+
+        private void FixedUpdate()
+        {
+            Vector3 downwardForce = Vector3.up * gravityForce;
+            bubbleRigidbody.AddForce(downwardForce, ForceMode.Acceleration);
+
+            foreach (Transform hand in handTransforms)
             {
-                handInContact[hand] = false;
+                Vector3 handPosition = hand.position;
+                float distanceFromCenter = Vector3.Distance(handPosition, transform.position);
+
+                if (distanceFromCenter >= bubbleRadius - edgeThreshold)
+                {
+                    if (!handInContact[hand])
+                    {
+                        Vector3 pushDirection = (handPosition - transform.position).normalized;
+                        bubbleRigidbody.AddForce(pushDirection * pushForce, ForceMode.Impulse);
+                        handInContact[hand] = true;
+                    }
+                }
+                else
+                {
+                    handInContact[hand] = false;
+                }
             }
         }
     }
