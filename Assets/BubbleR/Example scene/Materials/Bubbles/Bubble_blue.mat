@@ -11,8 +11,7 @@ Material:
   m_Shader: {fileID: 4800000, guid: 0f5715eafead83647953f743064c5774, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - SPATIAL_NOISE
+  m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
@@ -33,11 +32,11 @@ Material:
     - _Glossiness: 1
     - _Metal: 0.886
     - _Metallic: 1
-    - _SpatialNoise: 1
+    - _SpatialNoise: 0
     m_Colors:
     - _ColorShiftBand: {r: 0.34277225, g: 0.27503693, b: 0.37425387, a: 0}
-    - _ColorShiftNoise: {r: 0.92, g: 2, b: 7.15, a: 0}
+    - _ColorShiftNoise: {r: 0.498, g: 1.316, b: 7.15, a: 0}
     - _ColorShiftPeak: {r: 0.8277851, g: 0.52242225, b: 0.18712693, a: 0}
-    - _MainColor: {r: 0.735849, g: 0.735849, b: 0.735849, a: 0.3254902}
+    - _MainColor: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 0.14901961}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
