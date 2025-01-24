@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Samples/XR Hands/1.5.0/HandVisualizer/HandVisualizer.unity
-    guid: ab7acf0d9677fbe4db51bc36647d4fcb
+    path: Assets/Scenes/MainTest.unity
+    guid: 74021aa0ae67f3e418f5b93db278d822
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: b8ce9958d7503b84a8df4310762dda71, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
