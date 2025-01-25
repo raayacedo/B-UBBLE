@@ -92,11 +92,9 @@ namespace Realyteam.Player
             {
                 if (!isGrounded && timeInAir > 0)
                 {
-                    // Calculate damage based on time in air
                     float landingDamage = timeInAir * airTimeMultiplier;
                     TakeDamage(landingDamage);
 
-                    // Reset air time
                     timeInAir = 0f;
                 }
 
@@ -105,10 +103,13 @@ namespace Realyteam.Player
             else
             {
                 timeInAir += Time.deltaTime;
+
+                float airTimeDamage = airTimeDamageRate * Time.deltaTime;
+                TakeDamage(airTimeDamage);
+
                 isGrounded = false;
             }
         }
-
         private bool IsGrounded()
         {
             return Physics.Raycast(transform.position, Vector3.down, bubbleRadius + 0.1f);
@@ -133,7 +134,7 @@ namespace Realyteam.Player
         private void OnBubbleDestroyed()
         {
             Debug.Log("Bubble destroyed!");
-            Destroy(gameObject);
+           // Destroy(gameObject);
         }
 
         #endregion
