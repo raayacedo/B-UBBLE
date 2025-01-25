@@ -25,18 +25,18 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _BounceAmplitude: 0.449
+    - _BounceAmplitude: 0.283
     - _BounceFrequency: 1.48
     - _ColorShiftMode: 0
     - _ColorShifting: 1
     - _Glossiness: 1
-    - _Metal: 0.886
+    - _Metal: 0.711
     - _Metallic: 1
     - _SpatialNoise: 0
     m_Colors:
     - _ColorShiftBand: {r: 0.34277225, g: 0.27503693, b: 0.37425387, a: 0}
-    - _ColorShiftNoise: {r: 0.498, g: 1.316, b: 7.15, a: 0}
+    - _ColorShiftNoise: {r: 1.01, g: 1.28, b: 7.15, a: 1}
     - _ColorShiftPeak: {r: 0.8277851, g: 0.52242225, b: 0.18712693, a: 0}
-    - _MainColor: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 0.14901961}
+    - _MainColor: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 0.23921569}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
