@@ -32,7 +32,7 @@
 	{
 		Tags { "Queue" = "Transparent" }
 		LOD 200
-		Cull off
+		Cull front
 		CGINCLUDE
 		#pragma multi_compile __ SPATIAL_NOISE
 		#include "BubbleR.cginc"
