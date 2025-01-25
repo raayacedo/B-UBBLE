@@ -5,6 +5,8 @@ namespace Realyteam.Player
 {
     public class BubbleController : MonoBehaviour
     {
+        public static BubbleController Instance { get; private set; }
+
         [Header("General Settings")]
         [SerializeField]
         private Rigidbody bubbleRigidbody;
@@ -21,11 +23,17 @@ namespace Realyteam.Player
         [SerializeField]
         private float maxHealth = 100f;
         [SerializeField]
-        private float healthDecreaseRate = 1f; 
+        private float healthDecreaseRate = 1f;
         [SerializeField]
         private float airTimeDamageRate = 5f;
         [SerializeField]
-        private float airTimeMultiplier = 10f; 
+        private float airTimeThreshold = 3f;
+
+        [Header("Health Zone Settings")]
+        [SerializeField]
+        private float healthZoneRate = 0.1f;
+        [SerializeField]
+        private float DamageZoneRate = 0.1f;
 
         private float currentHealth;
         private float timeInAir;
@@ -35,9 +43,22 @@ namespace Realyteam.Player
         private Transform[] handTransforms;
         private Dictionary<Transform, bool> handInContact;
 
-        public float CurrentHealt => currentHealth;
+        public float CurrentHealth => currentHealth;
+        public bool OnAirDamage { get; private set; }
+        public bool OnHealthRestoring { get; private set; }
+        public bool OnDamageTaken { get; private set; }
 
         #region Unity Callbacks
+        private void Awake()
+        {
+            if (Instance != null && Instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            Instance = this;
+        }
+
         private void Start()
         {
             currentHealth = maxHealth;
@@ -82,6 +103,44 @@ namespace Realyteam.Player
             UpdateAirTime();
             DecreaseHealthOverTime();
         }
+
+        private void OnTriggerStay(Collider other)
+        {
+            if (other.CompareTag("HealthZone"))
+            {
+                Debug.Log("In healing zone");
+
+                Heal(healthZoneRate);
+                OnHealthRestoring = true;
+            }
+            else
+            {
+                OnHealthRestoring = false;
+            }
+
+            if (other.CompareTag("DamageZone"))
+            {
+                TakeDamage(DamageZoneRate);
+                OnDamageTaken = true;
+            }
+            else
+            {
+                OnDamageTaken = false;
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag("HealthZone"))
+            {
+                OnHealthRestoring = false;
+            }
+
+            if (other.CompareTag("DamageZone"))
+            {
+                OnDamageTaken = false;
+            }
+        }
         #endregion
 
         #region Private Methods
@@ -90,26 +149,23 @@ namespace Realyteam.Player
         {
             if (IsGrounded())
             {
-                if (!isGrounded && timeInAir > 0)
-                {
-                    float landingDamage = timeInAir * airTimeMultiplier;
-                    TakeDamage(landingDamage);
-
-                    timeInAir = 0f;
-                }
-
+                timeInAir = 0f;
                 isGrounded = true;
+                OnAirDamage = false;
             }
             else
             {
                 timeInAir += Time.deltaTime;
 
-                float airTimeDamage = airTimeDamageRate * Time.deltaTime;
-                TakeDamage(airTimeDamage);
-
-                isGrounded = false;
+                if (timeInAir > airTimeThreshold)
+                {
+                    float airTimeDamage = airTimeDamageRate * Time.deltaTime;
+                    TakeDamage(airTimeDamage);
+                    OnAirDamage = true;
+                }
             }
         }
+
         private bool IsGrounded()
         {
             return Physics.Raycast(transform.position, Vector3.down, bubbleRadius + 0.1f);
@@ -134,7 +190,7 @@ namespace Realyteam.Player
         private void OnBubbleDestroyed()
         {
             Debug.Log("Bubble destroyed!");
-           // Destroy(gameObject);
+            // Destroy(gameObject);
         }
 
         #endregion
@@ -147,6 +203,11 @@ namespace Realyteam.Player
             {
                 currentHealth = maxHealth;
             }
+        }
+
+        public void InflictDamage(float amount)
+        {
+            TakeDamage(amount);
         }
         #endregion
     }

@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Hand
+  - Water Volume
+  - HealthZone
+  - DamageZone
   layers:
   - Default
   - TransparentFX
