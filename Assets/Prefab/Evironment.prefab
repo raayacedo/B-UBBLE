@@ -9959,7 +9959,7 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 32
   m_ImplicitCom: 0
   m_ImplicitTensor: 1
   m_UseGravity: 1
@@ -16062,6 +16062,10 @@ PrefabInstance:
       propertyPath: m_CenterOfMass.y
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 8021758607963839751, guid: 3546ad52f1a75284bb0d87d26dd03e87, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 32
+      objectReference: {fileID: 0}
     - target: {fileID: 8518504513856639356, guid: 3546ad52f1a75284bb0d87d26dd03e87, type: 3}
       propertyPath: density
       value: 0.2
@@ -16434,6 +16438,10 @@ PrefabInstance:
     - target: {fileID: 5221213957848121946, guid: 3546ad52f1a75284bb0d87d26dd03e87, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8021758607963839751, guid: 3546ad52f1a75284bb0d87d26dd03e87, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 8518504513856639356, guid: 3546ad52f1a75284bb0d87d26dd03e87, type: 3}
       propertyPath: density
@@ -17113,6 +17121,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 2068996350531152168, guid: 845c09d5d820b9f47954c206660119bc, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2231290420762307498, guid: 845c09d5d820b9f47954c206660119bc, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -17477,6 +17489,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -2518950733495435299, guid: 845c09d5d820b9f47954c206660119bc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 124485378116229845}
+    - targetCorrespondingSourceObject: {fileID: 2068996350531152168, guid: 845c09d5d820b9f47954c206660119bc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5981914416921350105}
     - targetCorrespondingSourceObject: {fileID: 5886759989655637469, guid: 845c09d5d820b9f47954c206660119bc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3485064737731382288}
@@ -17544,6 +17559,32 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 6601867269645789286}
   m_SourcePrefab: {fileID: 100100000, guid: 845c09d5d820b9f47954c206660119bc, type: 3}
+--- !u!1 &163770470311002768 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2068996350531152168, guid: 845c09d5d820b9f47954c206660119bc, type: 3}
+  m_PrefabInstance: {fileID: 2230224474994322360}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &5981914416921350105
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163770470311002768}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 47.163155, y: 228.26, z: 17.365828}
+  m_Center: {x: -1.0306616, y: -100.3, z: 31.179974}
 --- !u!1 &794915593175417819 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1583933211791648867, guid: 845c09d5d820b9f47954c206660119bc, type: 3}
@@ -18377,15 +18418,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b8916824007a55d4cb19eb6e58c7edab, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9491506
+      value: 0.9491507
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b8916824007a55d4cb19eb6e58c7edab, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b8916824007a55d4cb19eb6e58c7edab, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.31482247
+      value: -0.31482226
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b8916824007a55d4cb19eb6e58c7edab, type: 3}
       propertyPath: m_LocalRotation.z
@@ -18486,8 +18527,8 @@ RotationConstraint:
   m_Enabled: 1
   serializedVersion: 2
   m_Weight: 1
-  m_RotationAtRest: {x: 0, y: -36.70019, z: 0}
-  m_RotationOffset: {x: 0, y: -90.82924, z: 0}
+  m_RotationAtRest: {x: 0, y: -36.700165, z: 0}
+  m_RotationOffset: {x: 0, y: -90.829216, z: 0}
   m_AffectRotationX: 1
   m_AffectRotationY: 1
   m_AffectRotationZ: 1
@@ -19043,6 +19084,10 @@ PrefabInstance:
     - target: {fileID: 5221213957848121946, guid: 3546ad52f1a75284bb0d87d26dd03e87, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8021758607963839751, guid: 3546ad52f1a75284bb0d87d26dd03e87, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 8518504513856639356, guid: 3546ad52f1a75284bb0d87d26dd03e87, type: 3}
       propertyPath: density
