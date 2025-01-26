@@ -45,11 +45,13 @@ namespace Realyteam.Player
         private float bubbleRadius;
         private Transform[] handTransforms;
         private Dictionary<Transform, bool> handInContact;
+        private bool onGameStart = false;
 
         public float CurrentHealth => currentHealth;
         public bool OnAirDamage { get; private set; }
         public bool OnHealthRestoring { get; private set; }
         public bool OnDamageTaken { get; private set; }
+        public bool OnDead { get; private set; }
 
         public Action OnBubbleExplode;
         public Action OnGoal;
@@ -81,9 +83,9 @@ namespace Realyteam.Player
             }
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
-            if (currentHealth <= ushort.MinValue) 
+            if (currentHealth <= ushort.MinValue || !onGameStart) 
             {
                 return;
             }
@@ -119,8 +121,6 @@ namespace Realyteam.Player
         {
             if (other.CompareTag("HealthZone"))
             {
-                Debug.Log("In healing zone");
-
                 Heal(healthZoneRate);
                 OnHealthRestoring = true;
             }
@@ -209,14 +209,12 @@ namespace Realyteam.Player
         private void OnBubbleDestroyed()
         {
             Debug.Log("Bubble destroyed!");
+            OnDead = true;
             bubbleMesh.SetActive(false);
             OnBubbleExplode?.Invoke();
         }
 
-        #endregion
-
-        #region Public Methods
-        public void Heal(float amount)
+        private void Heal(float amount)
         {
             currentHealth += amount;
             if (currentHealth > maxHealth)
@@ -225,10 +223,11 @@ namespace Realyteam.Player
             }
         }
 
-        public void InflictDamage(float amount)
-        {
-            TakeDamage(amount);
-        }
+        #endregion
+
+        #region Public Methods
+        public void StartGame() => onGameStart = true;
+
         #endregion
     }
 }

@@ -1,5 +1,6 @@
 using Realyteam.Player;
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -40,7 +41,15 @@ namespace Realyteam.Managers
 
             timer = gameDuration;
             isGameRunning = false;
-            StartGame();
+
+            //esto es opcional lo puse mientras para arrancar el juego de una
+            StartCoroutine(WaitStartGame());
+        }
+
+        private IEnumerator WaitStartGame()
+        { 
+           yield return new WaitForSeconds(3);
+           StartGame();
         }
 
         private void Update()
@@ -54,10 +63,11 @@ namespace Realyteam.Managers
         private void StartGame()
         {
             if (isGameRunning) return;
+            OnGameStart?.Invoke();
 
+            BubbleController.Instance.StartGame();
             timer = gameDuration;
             isGameRunning = true;
-            OnGameStart?.Invoke();
             Debug.Log("Game Started");
         }
 
@@ -79,7 +89,6 @@ namespace Realyteam.Managers
             OnGameFinished?.Invoke();
 
             Debug.Log("Game Finish");
-
 
         }
 

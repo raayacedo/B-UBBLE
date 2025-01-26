@@ -19,10 +19,6 @@ public class InGameUI : MonoBehaviour
         GameManager.Instance.OnGameStart += OnGameStart;
         GameManager.Instance.OnGameOver += OnGameOver;
         GameManager.Instance.OnGameFinished += OnWin;
-
-        gameOverPanel.Hide();
-        watchHud.Hide();
-        winPanel.Hide();
     }
 
     private void OnGameStart()
@@ -44,11 +40,8 @@ public class InGameUI : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (GameManager.Instance != null)
-        {
-            GameManager.Instance.OnGameStart -= OnGameStart;
-            GameManager.Instance.OnGameOver -= OnGameOver;
-            GameManager.Instance.OnGameFinished -= OnWin;
-        }
+        GameManager.Instance.OnGameStart -= OnGameStart;
+        GameManager.Instance.OnGameOver -= OnGameOver;
+        GameManager.Instance.OnGameFinished -= OnWin;
     }
 }

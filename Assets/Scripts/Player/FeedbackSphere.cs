@@ -5,8 +5,8 @@ namespace Realyteam.Player
     public class FeedbackSphere : MonoBehaviour
     {
         [Header("Settings")]
-        [SerializeField] private Color healColor = new Color(0, 1, 0, 0.5f); 
-        [SerializeField] private Color damageColor = new Color(1, 0, 0, 0.5f); 
+        [SerializeField] private Color healColor; 
+        [SerializeField] private Color damageColor; 
         [SerializeField] private float transitionSpeed = 2f;
 
         private Material sphereMaterial;
@@ -29,7 +29,11 @@ namespace Realyteam.Player
 
         private void Update()
         {
-            if (bubbleController == null) return;
+            if (bubbleController == null || bubbleController.OnDead) 
+            {
+                ResetTransparency();
+                return;
+            } 
 
             isHealing = bubbleController.OnHealthRestoring;
             isTakingDamage = bubbleController.OnDamageTaken;
@@ -51,20 +55,15 @@ namespace Realyteam.Player
 
         private void AnimatePulse(Color targetColor)
         {
-            // Incrementa el tiempo del pulso.
             pulseTime += Time.deltaTime * transitionSpeed;
-
-            // Oscila el valor de alfa entre 0 y el valor alfa del color objetivo usando Mathf.PingPong.
             float alpha = Mathf.PingPong(pulseTime, targetColor.a);
-
-            // Combinar el color objetivo con la transparencia pulsante.
             Color animatedColor = new Color(targetColor.r, targetColor.g, targetColor.b, alpha);
             sphereMaterial.color = animatedColor;
         }
 
         private void ResetTransparency()
         {
-            pulseTime = 0; // Reinicia el tiempo de la animación.
+            pulseTime = 0;
             sphereMaterial.color = transparentColor;
         }
     }
