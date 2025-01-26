@@ -6673,6 +6673,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 60546974231498861, guid: 47239a3bbf8c30940b747d205b30c4c9, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 01ecfcb2a063591428fcfca68f116c15, type: 2}
     - target: {fileID: 1483906391299184514, guid: 47239a3bbf8c30940b747d205b30c4c9, type: 3}
       propertyPath: m_Mesh
       value: 

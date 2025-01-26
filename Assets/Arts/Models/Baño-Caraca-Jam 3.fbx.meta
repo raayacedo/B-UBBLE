@@ -3,7 +3,127 @@ guid: 845c09d5d820b9f47954c206660119bc
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Black_satin
+    second: {fileID: 2100000, guid: 5640ddc2bf3a4304792db684567ccc8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chrome_003
+    second: {fileID: 2100000, guid: 4934e647c18832b49853dd63c0faae71, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chrome_009
+    second: {fileID: 2100000, guid: b6e3b205b49583d47bc3d3b15a0d906c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_brass
+    second: {fileID: 2100000, guid: a8d9e7abf72e6e140981e6c2c4765f00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_paint
+    second: {fileID: 2100000, guid: f4222adbb09f4694a979c53ed41e89f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gold_standing_shower
+    second: {fileID: 2100000, guid: f83623cbeb15caa4387ad108353f3d1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: METAL
+    second: {fileID: 2100000, guid: 92f2db487b12399489e1dd176abcef23, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Massing_White
+    second: {fileID: 2100000, guid: ee52e961b1672f74db6b31f21a99c08a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_001
+    second: {fileID: 2100000, guid: c0125eb54b4800d4d9c63ea5776067ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_002
+    second: {fileID: 2100000, guid: 114f2ac0eef43ba419551ed1b2fcc0b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_003
+    second: {fileID: 2100000, guid: be97dbddfb6d1a745a4169bf8c389d4a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_004
+    second: {fileID: 2100000, guid: a01594fc8cbbb56439e45ad8c9dbb107, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_010
+    second: {fileID: 2100000, guid: c777f667c3a8424459dd7f6fe2624b48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Porcelain_005
+    second: {fileID: 2100000, guid: 1c67e19282dc7684491686c9c2bd6b0e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Scene_Material1
+    second: {fileID: 2100000, guid: b1c5e8f366540df4994cfb8befccfc51, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Scene_Material2
+    second: {fileID: 2100000, guid: e73ba08daa9b37142914721c8973a0e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: White_Porcelain
+    second: {fileID: 2100000, guid: 9bc38cb535932de47bde09d49d7ca540, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: White_plastic_gloss
+    second: {fileID: 2100000, guid: 646accd2c93727e43b6714e30c76aa3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black
+    second: {fileID: 2100000, guid: 82ed4eddd4e2c494795dc05abc21aefc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chrome_001
+    second: {fileID: 2100000, guid: 5f50a837160ba5e4b9c6371c727ec23e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gray
+    second: {fileID: 2100000, guid: 7ad83ad31f7007e4696d3f21970277c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal1
+    second: {fileID: 2100000, guid: 26691a56deda66c479b4a0172a570cdf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: paper
+    second: {fileID: 2100000, guid: eb0d9396952556e4788a348e6e25968e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: white_matte
+    second: {fileID: 2100000, guid: 64516a6566e1c4549b62c04d6517f0c3, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
