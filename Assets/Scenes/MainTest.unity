@@ -2532,18 +2532,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4713728170148408783, guid: bebd2179b12b80b49b40c8e9edd7f49f, type: 3}
-      propertyPath: healColor.a
-      value: 0.11764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 4713728170148408783, guid: bebd2179b12b80b49b40c8e9edd7f49f, type: 3}
-      propertyPath: damageColor.a
-      value: 0.11764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 4713728170148408783, guid: bebd2179b12b80b49b40c8e9edd7f49f, type: 3}
-      propertyPath: transitionSpeed
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 8348073111913377508, guid: bebd2179b12b80b49b40c8e9edd7f49f, type: 3}
       propertyPath: m_Name
       value: BubblePlayer
