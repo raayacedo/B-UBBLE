@@ -9421,7 +9421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubbleMesh: {fileID: 5088297340210157896}
   bubbleRigidbody: {fileID: 3801368457654970353}
-  pushForce: 0.25
+  pushForce: 0.3
   edgeThreshold: 0.3
   gravityForce: 6
   maxHealth: 100
