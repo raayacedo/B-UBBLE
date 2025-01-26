@@ -9,6 +9,7 @@ TagManager:
   - HealthZone
   - DamageZone
   - Goal
+  - GameOver
   layers:
   - Default
   - TransparentFX

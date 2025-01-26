@@ -146,6 +146,11 @@ namespace Realyteam.Player
             {
                 OnGoal?.Invoke();
             }
+
+            if (other.CompareTag("GameOver"))
+            {
+                currentHealth = ushort.MinValue;
+            }
         }
 
         private void OnTriggerExit(Collider other)
