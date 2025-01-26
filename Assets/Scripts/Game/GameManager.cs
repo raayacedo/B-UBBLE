@@ -1,3 +1,4 @@
+using Realyteam.Player;
 using System;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,13 +11,14 @@ namespace Realyteam.Managers
 
         [Header("Game Settings")]
         [SerializeField]
-        private float gameDuration = 120f; 
+        private float gameDuration = 120f;
 
         private float timer;
         private bool isGameRunning;
 
         public Action OnGameStart;
         public Action OnGameOver;
+        public Action OnGameFinished;
 
         public float Timer => timer;
         public bool IsGameRunning => isGameRunning;
@@ -33,6 +35,9 @@ namespace Realyteam.Managers
 
         private void Start()
         {
+            BubbleController.Instance.OnBubbleExplode += EndGame;
+            BubbleController.Instance.OnGoal += FinishGame;
+
             timer = gameDuration;
             isGameRunning = false;
             StartGame();
@@ -46,7 +51,7 @@ namespace Realyteam.Managers
             }
         }
 
-        public void StartGame()
+        private void StartGame()
         {
             if (isGameRunning) return;
 
@@ -56,13 +61,26 @@ namespace Realyteam.Managers
             Debug.Log("Game Started");
         }
 
-        public void EndGame()
+        private void EndGame()
         {
             if (!isGameRunning) return;
 
             isGameRunning = false;
             OnGameOver?.Invoke();
+
             Debug.Log("Game Over");
+        }
+
+        private void FinishGame() 
+        {
+            if (!isGameRunning) return;
+            isGameRunning = false;
+
+            OnGameFinished?.Invoke();
+
+            Debug.Log("Game Finish");
+
+
         }
 
         private void UpdateTimer()
@@ -76,6 +94,11 @@ namespace Realyteam.Managers
             }
         }
 
-      
+        private void OnDisable()
+        {
+            BubbleController.Instance.OnBubbleExplode -= EndGame;
+            BubbleController.Instance.OnGoal -= FinishGame;
+        }
+
     }
 }

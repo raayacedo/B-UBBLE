@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 namespace Realyteam.Player
 {
@@ -8,6 +9,8 @@ namespace Realyteam.Player
         public static BubbleController Instance { get; private set; }
 
         [Header("General Settings")]
+        [SerializeField]
+        private GameObject bubbleMesh;
         [SerializeField]
         private Rigidbody bubbleRigidbody;
         [SerializeField]
@@ -48,6 +51,9 @@ namespace Realyteam.Player
         public bool OnHealthRestoring { get; private set; }
         public bool OnDamageTaken { get; private set; }
 
+        public Action OnBubbleExplode;
+        public Action OnGoal;
+
         #region Unity Callbacks
         private void Awake()
         {
@@ -77,7 +83,10 @@ namespace Realyteam.Player
 
         private void FixedUpdate()
         {
-            if (currentHealth <= ushort.MinValue) return;
+            if (currentHealth <= ushort.MinValue) 
+            {
+                return;
+            }
 
             Vector3 downwardForce = Vector3.up * gravityForce;
             bubbleRigidbody.AddForce(downwardForce, ForceMode.Acceleration);
@@ -128,6 +137,14 @@ namespace Realyteam.Player
             else
             {
                 OnDamageTaken = false;
+            }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Goal"))
+            {
+                OnGoal?.Invoke();
             }
         }
 
@@ -192,7 +209,8 @@ namespace Realyteam.Player
         private void OnBubbleDestroyed()
         {
             Debug.Log("Bubble destroyed!");
-            // Destroy(gameObject);
+            bubbleMesh.SetActive(false);
+            OnBubbleExplode?.Invoke();
         }
 
         #endregion

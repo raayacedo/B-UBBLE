@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Realyteam.Player
 {
-    public class HealtImageSpawner : MonoBehaviour
+    public class HealtParticle : MonoBehaviour
     {
         [Header("Settings")]
         public GameObject healtParticle;
