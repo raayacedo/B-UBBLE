@@ -3,7 +3,112 @@ guid: c8652f242e8cd32459084e3843651a94
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Assorted_Screw_Profiles
+    second: {fileID: 2100000, guid: 24d73df855084eb42950bc36efecdc55, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ceramica
+    second: {fileID: 2100000, guid: 5c9ac63f5b5e1604aa1b93b847476452, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cotton_001
+    second: {fileID: 2100000, guid: 0fa3b75d2adea6a4baaae396dd03a297, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dark_Walnut_fine_wood_PBR_texture_seamless
+    second: {fileID: 2100000, guid: e302b6b77fb6cc540961c3f80e66b5c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fabric_Towel
+    second: {fileID: 2100000, guid: 85aa3b8c80ec68b48addf7db7d1b71e6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass_001
+    second: {fileID: 2100000, guid: 950d771623e71184393fd236f629371e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_007
+    second: {fileID: 2100000, guid: f377242b806be4a42b47d9dd3528e967, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Nikon
+    second: {fileID: 2100000, guid: 5a7a60af919cc9247be921fd11acbdd8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Oak_Teak_Fine_Wood_Texture
+    second: {fileID: 2100000, guid: 99a1170778ea5c5438a061dfd65377fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pintura_vinil
+    second: {fileID: 2100000, guid: 54b8ea3a6fefd754a922cecfa54210a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Satin_Black_001
+    second: {fileID: 2100000, guid: eb148d45eb3e86a40b475ae91a296b31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Soap_001
+    second: {fileID: 2100000, guid: f33228f7c6d8698478c6273fca602ea3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Walnut_light_wood_fine_PBR_texture_seamless
+    second: {fileID: 2100000, guid: 0d144ae0081685644b9ead6bbb3223c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _______005
+    second: {fileID: 2100000, guid: 7e748503c639cc3489ce4e4a421a077c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black
+    second: {fileID: 2100000, guid: 851966a5e1a41014a86c1e890ea02ee3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cable_swab_001
+    second: {fileID: 2100000, guid: 0996193a02ea33046a36fc349cd2c12d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chrome_001
+    second: {fileID: 2100000, guid: 962aa6347e062a84caa49eaa387dcab2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cromado_riscado
+    second: {fileID: 2100000, guid: b7568ee78e31e2844966c54c185cc66d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gray
+    second: {fileID: 2100000, guid: af19a85f53570cb41b8744394ac4b35b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: napkin_boxBody_001
+    second: {fileID: 2100000, guid: 4b4923216ec05e64f9f11aae0a8b9e7b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: napkin_napkins
+    second: {fileID: 2100000, guid: 1bc2adec9dea74b4c8aa2b0f5c045d9c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
