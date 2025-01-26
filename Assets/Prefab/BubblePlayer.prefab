@@ -694,7 +694,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1147931324451794233}
   m_LocalRotation: {x: 0.75713176, y: 0.020171642, z: 0.023405096, w: 0.6525311}
-  m_LocalPosition: {x: 0, y: 0, z: -0.0276}
+  m_LocalPosition: {x: 0, y: 0, z: 0.0484}
   m_LocalScale: {x: 0.00074637716, y: 0.0007463773, z: 0.00074637734}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -706,7 +706,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 38.401, y: 4.52, z: 2.811}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.0026, y: 0.0297}
+  m_AnchoredPosition: {x: -0.0026, y: 0.0184}
   m_SizeDelta: {x: 103.8956, y: 101.5121}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3750724928975905838
@@ -4144,7 +4144,7 @@ Transform:
   m_GameObject: {fileID: 7398341369581039454}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7061285, y: -0.037185457, z: -0.037185367, w: 0.7061283}
-  m_LocalPosition: {x: 0.23099992, y: -0.07699999, z: 0.43599966}
+  m_LocalPosition: {x: -0.03, y: -0.07699999, z: 0.408}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9425,8 +9425,8 @@ MonoBehaviour:
   edgeThreshold: 0.3
   gravityForce: 6
   maxHealth: 100
-  healthDecreaseRate: 0.4
-  airTimeDamageRate: 2.5
+  healthDecreaseRate: 1
+  airTimeDamageRate: 5
   airTimeThreshold: 3
   healthZoneRate: 0.1
   DamageZoneRate: 0.15
@@ -9478,7 +9478,7 @@ RectTransform:
   m_Father: {fileID: 1386502815643498741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
