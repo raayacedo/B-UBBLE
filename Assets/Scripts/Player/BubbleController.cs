@@ -77,6 +77,8 @@ namespace Realyteam.Player
 
         private void FixedUpdate()
         {
+            if (currentHealth <= ushort.MinValue) return;
+
             Vector3 downwardForce = Vector3.up * gravityForce;
             bubbleRigidbody.AddForce(downwardForce, ForceMode.Acceleration);
 
