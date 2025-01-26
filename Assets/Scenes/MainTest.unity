@@ -2532,6 +2532,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7613565435187416472, guid: bebd2179b12b80b49b40c8e9edd7f49f, type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7613565435187416472, guid: bebd2179b12b80b49b40c8e9edd7f49f, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8348073111913377508, guid: bebd2179b12b80b49b40c8e9edd7f49f, type: 3}
       propertyPath: m_Name
       value: BubblePlayer
